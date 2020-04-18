@@ -6,8 +6,8 @@
   <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License MIT">
   </a>
-  <a href="https://www.npmjs.com/package/minimal-modal" target="_blank" rel="noopener">
-    <img src="https://badge.fury.io/js/minimal-modal.svg" alt="npm package version">
+  <a href="https://www.npmjs.com/package/@ohnaka0410/minimal-modal" target="_blank" rel="noopener">
+    <img src="https://badge.fury.io/js/@ohnaka0410/minimal-modal.svg" alt="npm package version">
   </a>
   <a href="https://david-dm.org/ohnaka0410/minimal-modal">
     <img src="https://david-dm.org/ohnaka0410/minimal-modal/status.svg" alt="dependency status">
@@ -54,12 +54,12 @@ import MinimalModal from 'minimal-modal';
 
 ### via CDN direct link
 ```html
-<script src="https://cdn.jsdelivr.net/npm/minimal-modal/dist/minimal-modal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal/dist/minimal-modal.min.js"></script>
 ```
 
 ### direct download
 ```shell
-curl -o https://cdn.jsdelivr.net/npm/minimal-modal/dist/minimal-modal.min.js
+curl -o https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal/dist/minimal-modal.min.js
 ```
 
 ```html

@@ -9,7 +9,7 @@ import upperFirst from 'lodash.upperfirst';
 
 import pkg from './package.json';
 
-const moduleName = upperFirst(camelCase(pkg.name));
+const moduleName = upperFirst(camelCase(pkg.name.replace(/^\@.*\//, '')));
 
 const banner = `/*!
   ${moduleName}.js v${pkg.version}
