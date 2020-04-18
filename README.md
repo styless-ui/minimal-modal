@@ -3,16 +3,20 @@
 </h3>
 
 <p align="center">
-  <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License MIT">
+  <img src="https://img.shields.io/npm/l/@ohnaka0410/minimal-modal" alt="licence">
+
+  <a href="https://www.npmjs.com/package/@ohnaka0410/minimal-modal" target="_blank">
+    <img src="https://img.shields.io/npm/v/@ohnaka0410/minimal-modal.svg" alt="npm">
   </a>
-  <a href="https://www.npmjs.com/package/@ohnaka0410/minimal-modal" target="_blank" rel="noopener">
-    <img src="https://badge.fury.io/js/%40ohnaka0410%2Fminimal-modal.svg" alt="npm package version">
+
+  <img src="https://img.shields.io/bundlephobia/min/@ohnaka0410/minimal-modal" alt="minified size">
+
+  <img src="https://img.shields.io/david/ohnaka0410/minimal-modal" alt="dependencies">
+
+  <a href="https://www.npmjs.com/package/@ohnaka0410/minimal-modal">
+    <img src="https://img.shields.io/npm/dt/@ohnaka0410/minimal-modal" alt="downloads">
   </a>
-  <a href="https://david-dm.org/ohnaka0410/minimal-modal">
-    <img src="https://david-dm.org/ohnaka0410/minimal-modal/status.svg" alt="dependency status">
-  </a>
-</a>
+</p>
 
 <p align="center">
   Minimal and Tiny Javascript Library for Modal Dialog
@@ -41,7 +45,7 @@ The aim of this library is to easily introduce a minimalistic modal dialog. It i
 
 ### via npm
 ```shell
-npm install minimal-modal --save
+npm install @ohnaka0410/minimal-modal --save
 ```
 
 ```javascript
