@@ -75,7 +75,7 @@ curl -o https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal/dist/minimal-moda
 ## Usage
 ### automatic
 ```javascript
-MinimalModal.instance.activate();
+MinimalModal.activate();
 ```
 **[demo](https://codepen.io/ohnaka0410/pen/vYNKWLV)**
 
@@ -83,10 +83,10 @@ MinimalModal.instance.activate();
 ```javascript
 // open
 const modal = document.querySelector('#someModal');
-MinimalModal.instance.show(modal);
+MinimalModal.show(modal);
 
 // close
-MinimalModal.instance.close();
+MinimalModal.close();
 ```
 **[demo](https://codepen.io/ohnaka0410/pen/mdeEqPa)**
 

@@ -15,11 +15,39 @@ class MinimalModal implements IMinimalModal {
   /**
    * Minimal Modal Instance Getter
    */
-  public static get instance(): MinimalModal {
+  private static get instance(): MinimalModal {
     if (!MinimalModal._instance) {
       MinimalModal._instance = new MinimalModal();
     }
     return MinimalModal._instance;
+  }
+
+  /**
+   * Active Minimal Modal
+   */
+  public static activate(): void {
+    this.instance._activate();
+  }
+
+  /**
+   * Deactive Minimal Modal
+   */
+  public static deactivate(): void {
+    this.instance._deactivate();
+  }
+
+  /**
+   * Show Modal
+   */
+  public static show(modalElement: HTMLElement): void {
+    this.instance._show(modalElement);
+  }
+
+  /**
+   * Close the Active Modal
+   */
+  public static close(): void {
+    this.instance._close();
   }
 
   // ===================
@@ -72,14 +100,14 @@ class MinimalModal implements IMinimalModal {
           // console.log('target is not found');
           return;
         }
-        this.show(modalElement);
+        this._show(modalElement);
         event.preventDefault();
         return;
       }
 
       if (this.datasetKeySet.closeTrigger in target.dataset) {
         // on Click Close Modal trigger
-        this.close();
+        this._close();
         event.preventDefault();
         return;
       }
@@ -89,31 +117,31 @@ class MinimalModal implements IMinimalModal {
   /**
    * Active Minimal Modal
    */
-  public activate(): void {
+  private _activate(): void {
     this._isActive = true;
   }
 
   /**
    * Deactive Minimal Modal
    */
-  public deactivate(): void {
+  private _deactivate(): void {
     this._isActive = false;
   }
 
   /**
    * Show Modal
    */
-  public show(ModalElement: HTMLElement): void {
+  private _show(modalElement: HTMLElement): void {
     // close current modal
-    this.close();
-    this._activeModal = new Modal(ModalElement);
+    this._close();
+    this._activeModal = new Modal(modalElement);
     this._activeModal.show();
   }
 
   /**
    * Close the Active Modal
    */
-  public close(): void {
+  private _close(): void {
     if (!this._activeModal) {
       return;
     }

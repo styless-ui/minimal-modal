@@ -17,7 +17,7 @@ export class Modal {
   /**
    * Close Modal
    */
-  close(): void;
+  public close(): void;
 }
 
 /**
@@ -28,27 +28,19 @@ export default class MinimalModal {
   //  Static
   // ===================
   /**
-   * Minimal Modal Instance Getter
-   */
-  public static get instance(): MinimalModal;
-
-  // ===================
-  //  Non-Static
-  // ===================
-  /**
    * Active Minimal Modal
    */
-  public activate(): void;
+  public static activate(): void;
   /**
    * Deactive Minimal Modal
    */
-  public deactivate(): void;
+  public static deactivate(): void;
   /**
    * Show Modal
    */
-  public show(ModalElement: HTMLElement): void;
+  public static show(modalElement: HTMLElement): void;
   /**
    * Close the Active Modal
    */
-  public close(): void;
+  public static close(): void;
 }
