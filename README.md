@@ -33,9 +33,9 @@ The aim of this library is to easily introduce a minimalistic modal dialog. It i
 
 ✔ Closes dialog on overlay click
 
-✔ Traps tab focus within the dialog (Dependent on [focus-trap](https://www.npmjs.com/package/focus-trap))
+✔ Traps tab focus within the modal (Dependent on [focus-trap](https://www.npmjs.com/package/focus-trap))
 
-✔ Lock the scrolling outside the dialog (Dependent on [body-scroll-lock](https://www.npmjs.com/package/body-scroll-lock))
+✔ Lock the scrolling outside the modal (Dependent on [body-scroll-lock](https://www.npmjs.com/package/body-scroll-lock))
 
 ✔ Supported for IE11+
 
@@ -50,10 +50,10 @@ npm install @ohnaka0410/minimal-modal --save
 
 ```javascript
 // Common.JS
-const MinimalModal = require('minimal-modal');
+const MinimalModal = require('@ohnaka0410/minimal-modal');
 
 // ESModules
-import MinimalModal from 'minimal-modal';
+import MinimalModal from '@ohnaka0410/minimal-modal';
 ```
 
 ### via CDN direct link
