@@ -1,9 +1,9 @@
-import createFocusTrap from 'focus-trap';
 import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
 import type {BodyScrollOptions} from 'body-scroll-lock';
 import type {FocusTrap} from 'focus-trap';
 import type {Options as FocusTrapOptions} from 'focus-trap';
 import {Modal as IModal} from '../types/index';
+import {createFocusTrap} from 'focus-trap';
 
 /**
  * Modal Class
