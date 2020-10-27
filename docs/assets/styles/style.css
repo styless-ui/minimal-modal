@@ -1,0 +1,132 @@
+section {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/** required styles */
+.modal {
+  display: none;
+}
+.modal[open] {
+  display: block;
+}
+
+/** custom styles */
+body {
+  line-height:1.5em;
+  font-size: 16px;
+}
+
+.section {
+  padding: 20px;
+}
+
+.button {
+  color: #fff;
+  border-radius: 4px;
+  background-color: #00897B;
+  padding: 0.5em 1.0em;
+}
+
+.modal {
+  /** Nothing */
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__container {
+  background-color: #fff;
+  padding: .5rem;
+  max-width: 400px;
+  max-height: 100vh;
+  border-radius: 4px;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.modal__header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: .5rem;
+}
+
+.modal__title {
+
+}
+
+.modal__close {
+  margin-left: auto;
+}
+
+.modal__content {
+  padding: .5rem;
+}
+
+.modal__footer {
+  padding: .5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; }
+      to { opacity: 1; }
+}
+
+/*
+@keyframes modalFadeOut {
+    from { opacity: 1; }
+      to { opacity: 0; }
+}
+*/
+
+@keyframes modalSlideIn {
+  from { transform: translateY(-15%); }
+    to { transform: translateY(0); }
+}
+
+/*
+@keyframes modalSlideOut {
+    from { transform: translateY(0); }
+    to { transform: translateY(15%); }
+}
+*/
+
+.modal[open] .modal__overlay {
+  animation: modalFadeIn .3s ease-in;
+}
+
+/*
+.modal:not([open]) .modal__overlay {
+  animation: modalFadeOut .3s ease-in;
+}
+*/
+
+.modal[open] .modal__container {
+  animation: modalSlideIn .3s ease-in;
+}
+
+/*
+.modal:not([open]) .modal__container {
+  animation: modalSlideOut .3s ease-in;
+}
+*/
+
+.modal .modal__container,
+.modal .modal__overlay {
+  will-change: transform;
+}

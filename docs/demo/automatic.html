@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>minimal-modal demo (automatic)</title>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/ress@2.0.4/dist/ress.min.css">
+  <link rel="stylesheet" type="text/css" href="../assets/styles/style.css">
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal/dist/minimal-modal.min.js"></script>
+  <script type="text/javascript">
+    MinimalModal.activate();
+  </script>
+</head>
+<body>
+  <section>
+    <button data-modal-show="#modal-1" class="button">
+      open
+    </button>
+    <div class="modal" id="modal-1" area-hidden="true">
+      <div class="modal__overlay" tabindex="-1" data-modal-close>
+        <div class="modal__container">
+          <header class="modal__header">
+            <h2 class="modal__title">
+              Modal Title
+            </h2>
+            <button class="modal__close" data-modal-close>
+              ✕
+            </button>
+          </header>
+          <main class="modal__content">
+            <p>
+              Minimal and Tiny Javascript Library for Modal Dialog.
+            </p>
+          </main>
+          <footer class="modal__footer">
+            <button class="button" data-modal-close>Close</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
