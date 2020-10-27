@@ -1,9 +1,9 @@
-import {disableBodyScroll, enableBodyScroll} from 'body-scroll-lock';
-import type {BodyScrollOptions} from 'body-scroll-lock';
-import type {FocusTrap} from 'focus-trap';
-import type {Options as FocusTrapOptions} from 'focus-trap';
-import {Modal as IModal} from '../types/index';
-import {createFocusTrap} from 'focus-trap';
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import type { BodyScrollOptions } from "body-scroll-lock";
+import type { FocusTrap } from "focus-trap";
+import type { Options as FocusTrapOptions } from "focus-trap";
+import { Modal as IModal } from "../types/index";
+import { createFocusTrap } from "focus-trap";
 
 /**
  * Modal Class
@@ -61,7 +61,11 @@ export default class Modal implements IModal {
    * Show Modal
    */
   public show(): void {
-    this._element.setAttribute('open', '');
+    this._element.setAttribute("open", "");
+    console.log(this._element.getAttribute("area-hidden"));
+    if (this._element.getAttribute("area-hidden") === "true") {
+      this._element.setAttribute("area-hidden", "false");
+    }
     disableBodyScroll(this._element, this.options?.bodyScrollLock);
     this._focusTrap.activate();
   }
@@ -72,6 +76,10 @@ export default class Modal implements IModal {
   public close(): void {
     this._focusTrap.deactivate();
     enableBodyScroll(this._element);
-    this._element.removeAttribute('open');
+    console.log(this._element.getAttribute("area-hidden"));
+    if (this._element.getAttribute("area-hidden") === "false") {
+      this._element.setAttribute("area-hidden", "true");
+    }
+    this._element.removeAttribute("open");
   }
 }

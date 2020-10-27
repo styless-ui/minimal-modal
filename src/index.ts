@@ -1,5 +1,5 @@
-import Modal from './modal';
-import IMinimalModal from '../types/index';
+import Modal from "./modal";
+import IMinimalModal from "../types/index";
 
 /**
  * Minimal Modal Class
@@ -65,16 +65,15 @@ class MinimalModal implements IMinimalModal {
     showTrigger: string;
     closeTrigger: string;
   } = {
-    showTrigger: 'modalShow',
-    closeTrigger: 'modalClose',
+    showTrigger: "modalShow",
+    closeTrigger: "modalClose",
   };
 
   /**
    * Init Instance
    */
   private constructor() {
-    // Nothing
-    window.addEventListener<'click'>('click', (event: Event): void => {
+    window.addEventListener<"click">("click", (event: Event): void => {
       if (!this._isActive) {
         return;
       }
@@ -88,14 +87,11 @@ class MinimalModal implements IMinimalModal {
 
       if (this.datasetKeySet.showTrigger in target.dataset) {
         // on Click Show Modal trigger
-        const modalSelector: string | undefined =
-          target.dataset[this.datasetKeySet.showTrigger];
+        const modalSelector: string | undefined = target.dataset[this.datasetKeySet.showTrigger];
         if (!modalSelector) {
           return;
         }
-        const modalElement: HTMLElement | null = document.querySelector(
-          modalSelector
-        );
+        const modalElement: HTMLElement | null = document.querySelector(modalSelector);
         if (!modalElement) {
           // console.log('target is not found');
           return;
@@ -107,6 +103,14 @@ class MinimalModal implements IMinimalModal {
 
       if (this.datasetKeySet.closeTrigger in target.dataset) {
         // on Click Close Modal trigger
+        this._close();
+        event.preventDefault();
+        return;
+      }
+    });
+
+    window.addEventListener<"keydown">("keydown", (event: KeyboardEvent): void => {
+      if (event.key === "Escape") {
         this._close();
         event.preventDefault();
         return;

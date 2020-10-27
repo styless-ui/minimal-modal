@@ -24,18 +24,20 @@
 
 ---
 
-The aim of this library is to easily introduce a minimalistic modal dialog. It is a library of only about 16KB.
+The aim of this library is to easily introduce a minimalistic modal dialog. It is a library of only about 18KB.
 
 &nbsp;
 
 ## Features
-✔ Toggles open attributes on open and close
+✔ Toggles aria-hidden attributes & open attributes on open and close
 
-✔ Closes dialog on overlay click
+✔ Closes dialog on overlay click or ESC press
 
 ✔ Traps tab focus within the modal (Dependent on [focus-trap](https://www.npmjs.com/package/focus-trap))
 
 ✔ Lock the scrolling outside the modal (Dependent on [body-scroll-lock](https://www.npmjs.com/package/body-scroll-lock))
+
+✔ Make By Typescript
 
 ✔ Supported for IE11+
 
@@ -77,7 +79,7 @@ curl -o https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal/dist/minimal-moda
 ```javascript
 MinimalModal.activate();
 ```
-**[demo](https://codepen.io/ohnaka0410/pen/vYNKWLV)**
+**[demo](https://ohnaka0410.github.io/minimal-modal/demo/automatic.html)**
 
 ### manual
 ```javascript
@@ -88,7 +90,7 @@ MinimalModal.show(modal);
 // close
 MinimalModal.close();
 ```
-**[demo](https://codepen.io/ohnaka0410/pen/mdeEqPa)**
+**[demo](https://ohnaka0410.github.io/minimal-modal/demo/manual.html)**
 
 &nbsp;
 
