@@ -60,12 +60,12 @@ import MinimalModal from '@ohnaka0410/minimal-modal';
 
 ### via CDN direct link
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal/dist/minimal-modal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal@v1.0.0/dist/minimal-modal.min.js"></script>
 ```
 
 ### direct download
 ```shell
-curl -o https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal/dist/minimal-modal.min.js
+curl -o https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal@v1.0.0/dist/minimal-modal.min.js
 ```
 
 ```html
