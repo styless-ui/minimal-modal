@@ -110,7 +110,7 @@ class MinimalModal implements IMinimalModal {
     });
 
     window.addEventListener<"keydown">("keydown", (event: KeyboardEvent): void => {
-      if (event.key === "Escape") {
+      if (event.key === "Escape" || event.key === "Esc") {
         this._close();
         event.preventDefault();
         return;
