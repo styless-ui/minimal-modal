@@ -24,9 +24,7 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c",
     "lint": "eslint src/**/*.ts",
-    "format": "eslint --fix src/**/*.ts",
-    "prepublishOnly": "npm run build",
-    "release": "npm publish"
+    "format": "eslint --fix src/**/*.ts"
   },
   "repository": {
     "type": "git",
@@ -59,8 +57,5 @@
     "rollup": "^2.32.1",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.0.3"
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
