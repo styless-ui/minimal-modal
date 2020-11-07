@@ -8,7 +8,7 @@ import { createFocusTrap } from "focus-trap";
 /**
  * Modal Class
  */
-export default class Modal implements IModal {
+export class Modal implements IModal {
   /** element */
   private _element: HTMLElement;
 

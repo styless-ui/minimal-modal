@@ -23,7 +23,7 @@ export class Modal {
 /**
  * Minimal Modal Class
  */
-export default class MinimalModal {
+export class MinimalModal {
   // ===================
   //  Static
   // ===================

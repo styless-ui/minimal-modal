@@ -1,6 +1,6 @@
 {
   "name": "@ohnaka0410/minimal-modal",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Minimal and Tiny Javascript Library for Modal Dialog",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -26,7 +26,8 @@
     "lint": "eslint src/**/*.ts",
     "format": "eslint --fix src/**/*.ts",
     "prepublishOnly": "npm run build",
-    "release": "npm publish"
+    "release": "npm publish",
+    "lint-staged": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -36,29 +37,53 @@
     "url": "https://github.com/ohnaka0410/minimal-modal/issues"
   },
   "homepage": "https://github.com/ohnaka0410/minimal-modal#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "*.(html,css)": [
+        "prettier --write",
+        "git add"
+      ],
+      "*.(ts,tsx,js,jsx)": [
+        "prettier --write",
+        "eslint --fix",
+        "git add"
+      ]
+    },
+    "ignore": [
+      "dist/**/*"
+    ]
+  },
   "dependencies": {
     "body-scroll-lock": "^3.1.5",
-    "focus-trap": "^6.1.3",
+    "focus-trap": "^6.1.4",
     "tslib": "^2.0.3"
   },
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.3",
-    "@rollup/plugin-commonjs": "^15.1.0",
-    "@rollup/plugin-node-resolve": "^9.0.0",
-    "@rollup/plugin-typescript": "^6.0.0",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "@rollup/plugin-typescript": "^6.1.0",
     "@types/body-scroll-lock": "^2.6.1",
-    "@typescript-eslint/eslint-plugin": "^4.5.0",
-    "@typescript-eslint/parser": "^4.5.0",
-    "eslint": "^7.12.0",
-    "eslint-config-prettier": "^6.14.0",
+    "@typescript-eslint/eslint-plugin": "^4.6.1",
+    "@typescript-eslint/parser": "^4.6.1",
+    "esbuild": "^0.8.4",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
     "lodash.camelcase": "^4.3.0",
     "lodash.upperfirst": "^4.3.1",
     "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
-    "rollup": "^2.32.1",
+    "rollup": "^2.33.1",
     "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.5"
   },
   "publishConfig": {
     "access": "public"

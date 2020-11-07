@@ -1,10 +1,10 @@
-import Modal from "./modal";
-import IMinimalModal from "../types/index";
+import { Modal } from "./modal";
+import { MinimalModal as IMinimalModal } from "../types/index";
 
 /**
  * Minimal Modal Class
  */
-class MinimalModal implements IMinimalModal {
+export class MinimalModal implements IMinimalModal {
   // ===================
   //  Static
   // ===================
@@ -153,5 +153,3 @@ class MinimalModal implements IMinimalModal {
     this._activeModal = null;
   }
 }
-
-export default MinimalModal;
