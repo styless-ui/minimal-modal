@@ -62,7 +62,7 @@ export class Modal implements IModal {
    */
   public show(): void {
     this._element.setAttribute("open", "");
-    console.log(this._element.getAttribute("area-hidden"));
+    // console.log(this._element.getAttribute("area-hidden"));
     if (this._element.getAttribute("area-hidden") === "true") {
       this._element.setAttribute("area-hidden", "false");
     }
@@ -76,7 +76,7 @@ export class Modal implements IModal {
   public close(): void {
     this._focusTrap.deactivate();
     enableBodyScroll(this._element);
-    console.log(this._element.getAttribute("area-hidden"));
+    // console.log(this._element.getAttribute("area-hidden"));
     if (this._element.getAttribute("area-hidden") === "false") {
       this._element.setAttribute("area-hidden", "true");
     }

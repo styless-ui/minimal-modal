@@ -153,3 +153,5 @@ export class MinimalModal implements IMinimalModal {
     this._activeModal = null;
   }
 }
+
+export default MinimalModal;
