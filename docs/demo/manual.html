@@ -49,6 +49,7 @@
       .querySelectorAll(".js-close-modal-trigger")
       .forEach(function (element) {
         element.addEventListener("click", function(event) {
+          console.log(event);
           MinimalModal.close();
         });
       });

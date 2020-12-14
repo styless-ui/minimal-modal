@@ -54,4 +54,8 @@ export class MinimalModal {
    * Close the Active Modal
    */
   public static close(): void;
+  /**
+   * Close All Modals
+   */
+  public static closeAll(): void;
 }
