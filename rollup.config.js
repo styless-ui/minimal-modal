@@ -1,7 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
-import buble from "@rollup/plugin-buble";
 import { terser } from "rollup-plugin-terser";
 
 import camelCase from "lodash.camelcase";
@@ -38,7 +37,7 @@ export default [
       },
     ],
     external: [...Object.keys(pkg.devDependencies || {})],
-    plugins: [resolve(), typescript(), commonjs({ extensions: [".ts", ".js"] }), buble()],
+    plugins: [resolve(), typescript(), commonjs({ extensions: [".ts", ".js"] })],
   },
   // For NPM
   {

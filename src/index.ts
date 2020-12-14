@@ -1,5 +1,5 @@
+import type { MinimalModal as IMinimalModal, ModalOptions } from "../types/index";
 import { Modal } from "./modal";
-import { MinimalModal as IMinimalModal } from "../types/index";
 
 /**
  * Minimal Modal Class
@@ -39,8 +39,8 @@ export class MinimalModal implements IMinimalModal {
   /**
    * Show Modal
    */
-  public static show(modalElement: HTMLElement): void {
-    this.instance._show(modalElement);
+  public static show(modalElement: HTMLElement, options?: ModalOptions): void {
+    this.instance._show(modalElement, options);
   }
 
   /**
@@ -50,6 +50,13 @@ export class MinimalModal implements IMinimalModal {
     this.instance._close();
   }
 
+  /**
+   * Close All Modals
+   */
+  public static closeAll(): void {
+    this.instance._closeAll();
+  }
+
   // ===================
   //  Non-Static
   // ===================
@@ -57,8 +64,25 @@ export class MinimalModal implements IMinimalModal {
   /** is Active */
   private _isActive = false;
 
+  /** Active Modal Instances */
+  private _activeModals: Modal[] = [];
+
   /** Active Modal Instance */
-  private _activeModal: Modal | null = null;
+  private get _activeModal(): Modal | null {
+    return this._activeModals[this._activeModals.length - 1] || null;
+  }
+  /** Active Modal Instance */
+  private set _activeModal(modal: Modal | null) {
+    if (modal == null) {
+      if (this._activeModals.length > 0) {
+        // remove latest modal
+        this._activeModals.pop();
+      }
+      return;
+    }
+    // add latest modal
+    this._activeModals.push(modal);
+  }
 
   /** Dataset Key Set */
   private datasetKeySet: {
@@ -85,27 +109,22 @@ export class MinimalModal implements IMinimalModal {
 
       const target: HTMLElement = event.target;
 
-      if (this.datasetKeySet.showTrigger in target.dataset) {
-        // on Click Show Modal trigger
-        const modalSelector: string | undefined = target.dataset[this.datasetKeySet.showTrigger];
-        if (!modalSelector) {
-          return;
-        }
-        const modalElement: HTMLElement | null = document.querySelector(modalSelector);
-        if (!modalElement) {
-          // console.log('target is not found');
-          return;
-        }
-        this._show(modalElement);
-        event.preventDefault();
-        return;
-      }
-
       if (this.datasetKeySet.closeTrigger in target.dataset) {
         // on Click Close Modal trigger
         this._close();
         event.preventDefault();
-        return;
+      }
+
+      if (this.datasetKeySet.showTrigger in target.dataset) {
+        // on Click Show Modal trigger
+        const modalSelector: string | undefined = target.dataset[this.datasetKeySet.showTrigger];
+        if (modalSelector) {
+          const modalElement: HTMLElement | null = document.querySelector(modalSelector);
+          if (modalElement) {
+            this._show(modalElement);
+            event.preventDefault();
+          }
+        }
       }
     });
 
@@ -135,10 +154,8 @@ export class MinimalModal implements IMinimalModal {
   /**
    * Show Modal
    */
-  private _show(modalElement: HTMLElement): void {
-    // close current modal
-    this._close();
-    this._activeModal = new Modal(modalElement);
+  private _show(modalElement: HTMLElement, options?: ModalOptions): void {
+    this._activeModal = new Modal(modalElement, options);
     this._activeModal.show();
   }
 
@@ -146,11 +163,17 @@ export class MinimalModal implements IMinimalModal {
    * Close the Active Modal
    */
   private _close(): void {
-    if (!this._activeModal) {
-      return;
-    }
-    this._activeModal.close();
+    this._activeModal?.close();
     this._activeModal = null;
+  }
+
+  /**
+   * Close All Modals
+   */
+  private _closeAll(): void {
+    while (this._activeModal != null) {
+      this._close();
+    }
   }
 }
 
