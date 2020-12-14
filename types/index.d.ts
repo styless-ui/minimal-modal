@@ -1,3 +1,6 @@
+import type { BodyScrollOptions } from "body-scroll-lock";
+import type { Options as FocusTrapOptions } from "focus-trap";
+
 /**
  * Modal Class
  */
@@ -5,7 +8,7 @@ export class Modal {
   /**
    * Init Instance
    */
-  constructor(element: HTMLElement);
+  constructor(element: HTMLElement, options?: ModalOptions);
   /**
    * Modal Element Getter
    */
@@ -18,6 +21,14 @@ export class Modal {
    * Close Modal
    */
   public close(): void;
+}
+
+/**
+ * Modal Options
+ */
+export interface ModalOptions {
+  focusTrap?: Pick<FocusTrapOptions, "escapeDeactivates" | "clickOutsideDeactivates">;
+  bodyScrollLock?: BodyScrollOptions;
 }
 
 /**
@@ -38,7 +49,7 @@ export class MinimalModal {
   /**
    * Show Modal
    */
-  public static show(modalElement: HTMLElement): void;
+  public static show(modalElement: HTMLElement, options?: ModalOptions): void;
   /**
    * Close the Active Modal
    */

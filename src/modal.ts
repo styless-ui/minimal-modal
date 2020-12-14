@@ -1,9 +1,8 @@
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import type { BodyScrollOptions } from "body-scroll-lock";
 import type { FocusTrap } from "focus-trap";
-import type { Options as FocusTrapOptions } from "focus-trap";
-import { Modal as IModal } from "../types/index";
+import type { Modal as IModal, ModalOptions } from "../types/index";
 import { createFocusTrap } from "focus-trap";
+import merge from "lodash.merge";
 
 /**
  * Modal Class
@@ -16,36 +15,38 @@ export class Modal implements IModal {
   private _focusTrap: FocusTrap;
 
   /** Modal Options */
-  private options:
-    | {
-        focusTrap?: FocusTrapOptions;
-        bodyScrollLock?: BodyScrollOptions;
-      }
-    | undefined;
+  private options: ModalOptions;
 
   /**
    * Init Instance
    */
-  public constructor(element: HTMLElement) {
+  public constructor(element: HTMLElement, options?: ModalOptions) {
     this._element = element;
 
-    this.options = {
-      focusTrap: {
-        onActivate: undefined,
-        onDeactivate: undefined,
-        initialFocus: undefined,
-        fallbackFocus: undefined,
-        returnFocusOnDeactivate: undefined,
-        setReturnFocus: undefined,
-        escapeDeactivates: false,
-        clickOutsideDeactivates: false,
-        allowOutsideClick: undefined,
+    this.options = merge(
+      {
+        focusTrap: {
+          onActivate: undefined,
+          onDeactivate: undefined,
+          initialFocus: undefined,
+          fallbackFocus: undefined,
+          returnFocusOnDeactivate: undefined,
+          setReturnFocus: undefined,
+          allowOutsideClick: undefined,
+        },
+        bodyScrollLock: {
+          reserveScrollBarGap: true,
+          allowTouchMove: undefined,
+        },
       },
-      bodyScrollLock: {
-        reserveScrollBarGap: true,
-        allowTouchMove: undefined,
-      },
-    };
+      options,
+      {
+        focusTrap: {
+          escapeDeactivates: false,
+          clickOutsideDeactivates: false,
+        },
+      }
+    );
     // Create FocusTrap Instance
     this._focusTrap = createFocusTrap(this._element, this.options?.focusTrap);
   }

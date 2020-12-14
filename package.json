@@ -25,7 +25,8 @@
     "build": "rollup -c",
     "lint": "eslint src/**/*.ts",
     "format": "eslint --fix src/**/*.ts",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "server": "browser-sync start --config \"./.bs-config.js\""
   },
   "repository": {
     "type": "git",
@@ -59,6 +60,7 @@
   "dependencies": {
     "body-scroll-lock": "^3.1.5",
     "focus-trap": "^6.1.4",
+    "lodash.merge": "^4.6.2",
     "tslib": "^2.0.3"
   },
   "devDependencies": {
@@ -67,8 +69,10 @@
     "@rollup/plugin-node-resolve": "^10.0.0",
     "@rollup/plugin-typescript": "^6.1.0",
     "@types/body-scroll-lock": "^2.6.1",
+    "@types/lodash.merge": "^4.6.6",
     "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",
+    "browser-sync": "^2.26.13",
     "esbuild": "^0.8.4",
     "eslint": "^7.13.0",
     "eslint-config-prettier": "^6.15.0",

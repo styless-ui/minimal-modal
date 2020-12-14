@@ -1,5 +1,5 @@
+import type { MinimalModal as IMinimalModal, ModalOptions } from "../types/index";
 import { Modal } from "./modal";
-import { MinimalModal as IMinimalModal } from "../types/index";
 
 /**
  * Minimal Modal Class
@@ -39,7 +39,7 @@ export class MinimalModal implements IMinimalModal {
   /**
    * Show Modal
    */
-  public static show(modalElement: HTMLElement): void {
+  public static show(modalElement: HTMLElement, options?: ModalOptions): void {
     this.instance._show(modalElement);
   }
 
@@ -135,10 +135,10 @@ export class MinimalModal implements IMinimalModal {
   /**
    * Show Modal
    */
-  private _show(modalElement: HTMLElement): void {
+  private _show(modalElement: HTMLElement, options?: ModalOptions): void {
     // close current modal
     this._close();
-    this._activeModal = new Modal(modalElement);
+    this._activeModal = new Modal(modalElement, options);
     this._activeModal.show();
   }
 
