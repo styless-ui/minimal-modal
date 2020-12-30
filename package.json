@@ -1,6 +1,6 @@
 {
   "name": "@ohnaka0410/minimal-modal",
-  "version": "2.0.1",
+  "version": "2.1.0",
   "description": "Minimal and Tiny Javascript Library for Modal Dialog",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -78,8 +78,8 @@
     "@rollup/plugin-typescript": "^8.1.0",
     "@types/body-scroll-lock": "^2.6.1",
     "@types/lodash.merge": "^4.6.6",
-    "@typescript-eslint/eslint-plugin": "^4.10.0",
-    "@typescript-eslint/parser": "^4.10.0",
+    "@typescript-eslint/eslint-plugin": "^4.11.1",
+    "@typescript-eslint/parser": "^4.11.1",
     "browser-sync": "^2.26.13",
     "eslint": "^7.16.0",
     "eslint-config-prettier": "^7.1.0",
