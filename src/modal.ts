@@ -36,7 +36,15 @@ export class Modal implements IModal {
         },
         bodyScrollLock: {
           reserveScrollBarGap: true,
-          allowTouchMove: undefined,
+          allowTouchMove: (element: HTMLElement | Element): boolean => {
+            while (element && element !== document.body) {
+              if (element.getAttribute("body-scroll-lock-ignore") !== null) {
+                return true;
+              }
+              if (element.parentElement) element = element.parentElement;
+            }
+            return false;
+          },
         },
       },
       options,

@@ -1,6 +1,10 @@
 import type { BodyScrollOptions } from "body-scroll-lock";
 import type { Options as FocusTrapOptions } from "focus-trap";
 
+interface patchedBodyScrollOptions extends BodyScrollOptions {
+  allowTouchMove?: (el: HTMLElement | Element) => boolean;
+}
+
 /**
  * Modal Class
  */
@@ -28,7 +32,7 @@ export class Modal {
  */
 export interface ModalOptions {
   focusTrap?: Pick<FocusTrapOptions, "escapeDeactivates" | "clickOutsideDeactivates">;
-  bodyScrollLock?: BodyScrollOptions;
+  bodyScrollLock?: patchedBodyScrollOptions;
 }
 
 /**
