@@ -18,7 +18,7 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
           # ↓ package.json の name に含めたスコープを指定しておく
-          scope       : '@ohnaka0410'
+          scope       : '@yuki0410'
           always-auth : true
         env :
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}

@@ -3,18 +3,18 @@
 </h3>
 
 <p align="center">
-  <img src="https://img.shields.io/npm/l/@ohnaka0410/minimal-modal" alt="licence">
+  <img src="https://img.shields.io/npm/l/@yuki0410/minimal-modal" alt="licence">
 
-  <a href="https://www.npmjs.com/package/@ohnaka0410/minimal-modal" target="_blank">
-    <img src="https://img.shields.io/npm/v/@ohnaka0410/minimal-modal.svg" alt="npm">
+  <a href="https://www.npmjs.com/package/@yuki0410/minimal-modal" target="_blank">
+    <img src="https://img.shields.io/npm/v/@yuki0410/minimal-modal.svg" alt="npm">
   </a>
 
-  <img src="https://img.shields.io/bundlephobia/min/@ohnaka0410/minimal-modal" alt="minified size">
+  <img src="https://img.shields.io/bundlephobia/min/@yuki0410/minimal-modal" alt="minified size">
 
-  <img src="https://img.shields.io/david/ohnaka0410/minimal-modal" alt="dependencies">
+  <img src="https://img.shields.io/david/yuki0410/minimal-modal" alt="dependencies">
 
-  <a href="https://www.npmjs.com/package/@ohnaka0410/minimal-modal">
-    <img src="https://img.shields.io/npm/dt/@ohnaka0410/minimal-modal" alt="downloads">
+  <a href="https://www.npmjs.com/package/@yuki0410/minimal-modal">
+    <img src="https://img.shields.io/npm/dt/@yuki0410/minimal-modal" alt="downloads">
   </a>
 </p>
 
@@ -47,25 +47,25 @@ The aim of this library is to easily introduce a minimalistic modal dialog. It i
 
 ### via npm
 ```shell
-npm install @ohnaka0410/minimal-modal --save
+npm install @yuki0410/minimal-modal --save
 ```
 
 ```javascript
 // Common.JS
-const MinimalModal = require('@ohnaka0410/minimal-modal');
+const MinimalModal = require('@yuki0410/minimal-modal');
 
 // ESModules
-import { MinimalModal } from '@ohnaka0410/minimal-modal';
+import { MinimalModal } from '@yuki0410/minimal-modal';
 ```
 
 ### via CDN direct link
 ```html
-<script src="https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal@v2.1.1/dist/minimal-modal.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@yuki0410/minimal-modal@v2.1.1/dist/minimal-modal.min.js"></script>
 ```
 
 ### direct download
 ```shell
-curl -o https://cdn.jsdelivr.net/npm/@ohnaka0410/minimal-modal@v2.1.1/dist/minimal-modal.min.js
+curl -o https://cdn.jsdelivr.net/npm/@yuki0410/minimal-modal@v2.1.1/dist/minimal-modal.min.js
 ```
 
 ```html
@@ -117,4 +117,4 @@ This project is licensed under [MIT license](https://opensource.org/licenses/MIT
 
 ## Created and maintained by
 
-[@ohnaka0410](https://twitter.com/ohnaka0410) 🇯🇵
+[@yuki0410_](https://twitter.com/yuki0410_) 🇯🇵
