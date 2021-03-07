@@ -11,7 +11,7 @@
 
   <img src="https://img.shields.io/bundlephobia/min/@yuki0410/minimal-modal" alt="minified size">
 
-  <img src="https://img.shields.io/david/yuki0410/minimal-modal" alt="dependencies">
+  <img src="https://img.shields.io/david/ohnaka0410/minimal-modal" alt="dependencies">
 
   <a href="https://www.npmjs.com/package/@yuki0410/minimal-modal">
     <img src="https://img.shields.io/npm/dt/@yuki0410/minimal-modal" alt="downloads">
