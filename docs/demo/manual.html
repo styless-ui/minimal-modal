@@ -33,6 +33,9 @@
       Array.prototype.forEach.call(document.querySelectorAll(".js-show-modal-trigger"), function (element) {
         element.addEventListener("click", function (event) {
           console.log(event);
+          if (element !== event.target) {
+            return;
+          }
           const modal = document.querySelector("#modal-1");
           MinimalModal.show(modal);
         });
@@ -41,6 +44,9 @@
       Array.prototype.forEach.call(document.querySelectorAll(".js-close-modal-trigger"), function (element) {
         element.addEventListener("click", function (event) {
           console.log(event);
+          if (element !== event.target) {
+            return;
+          }
           MinimalModal.close();
         });
       });
