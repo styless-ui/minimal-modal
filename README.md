@@ -74,23 +74,61 @@ curl -o https://cdn.jsdelivr.net/npm/@yuki0410/minimal-modal/dist/minimal-modal.
 
 &nbsp;
 
-## Usage
-### automatic
-```javascript
-MinimalModal.activate();
+## Automatic Usage
+
+```html
+<!-- show trigger -->
+<button data-modal-show="#modal-1">
+
+<!-- close trigger -->
+<button data-modal-close>
 ```
+```javascript
+// activate
+MinimalModal.activate();
+
+// deactivate
+MinimalModal.deactivate();
+```
+
 **[demo](https://ohnaka0410.github.io/minimal-modal/demo/automatic.html)**
 
-### manual
+### MinimalModal.activate();
+Active Show / Close Modal Triggers.
+
+### MinimalModal.deactivate();
+Deactive Show / Close Modal Triggers.
+
+## Manual Usage
 ```javascript
-// open
 const modal = document.querySelector('#someModal');
+
+// open
 MinimalModal.show(modal);
 
 // close
 MinimalModal.close();
+
+// closeAll
+MinimalModal.closeAll();
 ```
+
 **[demo](https://ohnaka0410.github.io/minimal-modal/demo/manual.html)**
+
+### MinimalModal.show(element[, modalOptions]);
+Show Modal.
+
+`element:` HTMLElement
+
+`modalOptions`
+- **focusTrap** { FocusTrapOptions? }: See [FocusTrap Options](https://github.com/focus-trap/focus-trap#createfocustrapelement-createoptions).
+- **bodyScrollLock** { BodyScrollOptions? }: See [BodyScrollLock Options](https://github.com/willmcpo/body-scroll-lock#options).
+
+### MinimalModal.close();
+Close Active Modal.
+
+### MinimalModal.closeAll();
+Close All Models.
 
 &nbsp;
 
