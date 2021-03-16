@@ -31,7 +31,7 @@ export class Modal {
  * Modal Options
  */
 export interface ModalOptions {
-  focusTrap?: Pick<FocusTrapOptions, "escapeDeactivates" | "clickOutsideDeactivates">;
+  focusTrap?: Omit<FocusTrapOptions, "escapeDeactivates" | "clickOutsideDeactivates">;
   bodyScrollLock?: patchedBodyScrollOptions;
 }
 
