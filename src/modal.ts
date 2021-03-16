@@ -37,8 +37,9 @@ export class Modal implements IModal {
         bodyScrollLock: {
           reserveScrollBarGap: true,
           allowTouchMove: (element: HTMLElement | Element): boolean => {
+            const ignoreDatasetKey = "bodyScrollLockIgnore";
             while (element && element !== document.body) {
-              if (element.getAttribute("body-scroll-lock-ignore") !== null) {
+              if ("dataset" in element && ignoreDatasetKey in element.dataset) {
                 return true;
               }
               if (element.parentElement) element = element.parentElement;
