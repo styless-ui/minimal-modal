@@ -61,16 +61,3 @@ jobs:
         run : npm publish --access=public
         env :
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
-
-      - name: Read package.json
-        uses: dutscher/read-package-json-endpoint-actions@v1.33.7
-        id: package-json-endpoint
-
-      - name: package-version-to-git-tag
-        uses: pkgdeps/git-tag-action@v2
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          github_repo: ${{ github.repository }}
-          git_commit_sha: ${{ github.sha }}
-          version: ${{ steps.package-json-endpoint.outputs.endpoint }}
-          git_tag_prefix: "v"
