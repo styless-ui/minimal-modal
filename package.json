@@ -1,6 +1,6 @@
 {
   "name": "@yuki0410/minimal-modal",
-  "version": "2.1.6",
+  "version": "2.1.7",
   "description": "Minimal and Tiny Javascript Library for Modal Dialog",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
